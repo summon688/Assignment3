@@ -1,0 +1,20 @@
+
+
+<h1>Product Catalog</h1>
+
+    <% @products.each do |product| %>
+      <div class = "entry">
+        <%= image_tag("/#{product.image}") %>
+          <%= tag.h3 "#{product.Name}" %>
+          <p><%= sanitize(product.Description) %></p>
+          <div class="price_line">
+          <span class="price"><%= number_to_currency(product.Price, unit: "$") %></span>
+          </div>
+        <%= button_to'Add to Cart', lineitems_path(product_id: product), class: 'add_to_cart', remote:true%>
+    <% end %>
+<br>
+
+<%= link_to 'New Product', new_product_path %>
+</div>
+
+

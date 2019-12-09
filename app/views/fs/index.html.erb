@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fs.each do |f| %>
+      <tr>
+        <td><%= f.Name %></td>
+        <td><%= link_to 'Show', f %></td>
+        <td><%= link_to 'Edit', edit_f_path(f) %></td>
+        <td><%= link_to 'Destroy', f, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New F', new_f_path %>

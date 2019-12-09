@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assignment3</title>
+     <link rel="stylesheet" href="products.css">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id = "banner"> Our product <%= image_tag("/./assets/brand.jpg", :size => "45x45")%></div>
+<div id = "columns"> 
+<div id = "side"> My cart
+  <div style=“color:yellow”> 
+    <h1>testing</h1> 
+  </div> 
+<div id=‘cart’>          
+  <%= render (@cart) %>      
+</div>  
+
+  <ul>
+    <li> <%= link_to 'Home', new_product_path %> </li>
+    <li> <%= link_to 'Questions', new_product_path %> </li>
+    <li> <%= link_to 'News', new_product_path %> </li>
+    <li> <%= link_to 'Contact', new_product_path %> </li>
+  </ul>
+</div>
+
+<div id = "main" class="shopper">
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+  <%= yield %>
+</div>
+  </body>
+</html>

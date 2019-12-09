@@ -1,0 +1,10 @@
+<h1>Items in the shopping cart</h1>
+    <ul>
+    <% @lineitem.each do |item| %>
+      <li><%= "#{item.quantities} - #{item.product.Name} "%></li>
+      <% end %>
+    </ul>
+    <%= link_to 'Destroy', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<br>
+
